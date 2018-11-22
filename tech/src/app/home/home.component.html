@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+tablee {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: lightblue;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.table {
+  width: 500px;;
+  float: left;
+  margin-right: 30px;
+}
+.tables {
+  width: 600px;
+  float: left;
+}
+.tables .form-inline .form-group #date {
+  float: right;
+  width: 500px;
+}
+
+#amount {
+  float: right;
+}
+#name {
+width: 100px;
+}
+#des {
+width: 100px;
+}
+#btn-default{
+  float: right;
+  color: blue;
+}
+.btn-default{
+  color: blue;
+}
+.btn-primary {
+  float: right;
+}
+</style>
+</head>
+<body>
+  
+    
+  <div class="tablee">
+  <div class="table">
+      <form (submit)="drop()">
+          <input type="text" name="online" [(ngModel)]="drop_model" placeholder="$$">
+          <input type="submit" name="drop" value="Drop">
+        </form><br />
+      <span class="btn-default">Overall Balance is: {{overall | currency:'USD':true:'1.2-2'}} </span>
+      <h2>Cash</h2>
+      <button id="right" type="submit" (click)="register_deposit()" class="btn-success">Cash deposited for approval</button>  
+    <form>
+      <div class="form-group">
+       <input type="text" class="form-control" id="amount" placeholder="Description" name="description" [(ngModel)]="cash_model.description">
+      </div><br />
+      <div class="form-group">
+          <input type="number" class="form-control" id="amount" placeholder="$" name="amount" [(ngModel)]="cash_model.amount">
+        </div>
+      <!-- <div class="checkbox">
+        <label><input type="checkbox" name="remember"> Remember me</label>
+      </div> -->
+      <button type="submit" (click)="register_cash()" class="btn-success">Cash</button>
+      <!-- <button type="submit" (click)="update_cash()" class="btn-primary">Update</button> -->
+    </form>
+     <hr />
+     <input type="text" name="filter_cash" [(ngModel)]='filter_cash' placeholder="Enter description to filter">
+     <button id="btn-default">total {{cash_all | fil:one | currency:'USD':true:'1.2-2'}}</button>
+     <form>
+        <!-- <select class="btn-warning" name="one" [(ngModel)]="one">
+          <option>In Hand</option>
+          <option>Approved</option>
+        </select> -->
+        
+        <!-- <input type="submit" class="btn-warning" name="filter" value="Filter Cash"> -->
+      </form>
+    <table class="table">
+
+      
+        <br />
+        <thead>
+            
+          <tr>
+            <th>Date</th>
+            <th id="des">Description</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of cash | filterCash:one | filterCashDes:filter_cash">
+            <td>{{x.date * 1000 | date}}</td>
+            <td id="des">{{x.description}}</td>
+            <td>{{x.amount | currency:'USD':true:'1.2-2'}}</td>
+            <td>{{x.status}}</td>
+            <td>
+                <button (click)="delete_ca(x.id)" class="btn-danger">Delete.</button>
+  
+                <button *ngIf='!id' routerLink="up/{{x.id}}" class="btn-warning">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+ 
+
+<script>
+  
+</script>
+<!-- <a onClick="window.location.reload()">Start</a> -->
+</div>
+<div class="tables">
+  <h2>Checks</h2>
+    <form (submit)="register_check()">
+      <!-- <select class="btn-warning" name="status" [(ngModel)]="check_model.status" required>
+          <option>Pending</option>
+          <option>Deposited</option>
+          <option>Approved</option>
+        </select> -->
+        <br />
+      <div class="form-group">
+        <input type="text" class="form-control" id="amount" placeholder="Full Name" name="name" [(ngModel)]="check_model.name">
+      </div>
+      <div class="form-group">
+          <input type="number" class="form-control" id="date" placeholder="phone#" name="date" [(ngModel)]="check_model.phone">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" id="amount" placeholder="$$" name="amount" [(ngModel)]="check_model.amount">
+          </div>
+      <!-- <div class="checkbox">
+        <label><input type="checkbox" name="remember"> Remember me</label>
+      </div> -->
+      <button type="submit" class="btn-success">Register Check</button>
+      <!-- <button type="submit" (click)="update_check()" class="btn-primary">Update Check</button> -->
+    </form>
+   <div>
+      <button id="btn-default">total {{check_all | total:labo | currency:'USD':true:'1.2-2'}}</button>
+   </div>
+   
+     <hr />
+     <input type="text" name="filter_check" [(ngModel)]='filter_check' placeholder="Customer name to filter">
+     <form>
+        Date: <select class="btn-warning" name="mid" [(ngModel)]="mid">
+          <option>All</option>
+          <option>Today</option>
+        </select>
+        Status: <select class="btn-warning" name="labo" [(ngModel)]="labo">
+            <option>All</option>
+            <option>Pending</option>
+            <option>Deposited</option>
+            <option>Approved</option>
+          </select>
+        <!-- <input type="submit" class="btn-warning" name="filter" value="Filter Checks"> -->
+      </form>
+      <button class="btn-primary" (click)="inform()">Inform Check Owners for deposit</button>
+<table class="tables">
+    
+  <tr>
+    
+    <th id="name">Customer</th>
+    <th>Phone</th>
+    <th>Date</th>
+    <th>Amount</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  
+  <tr *ngFor="let x of check | filterCash:mid | filterCheckOne:labo | filterCheckTwo: filter_check ">
+    <td id="name">{{x.customer}}</td>
+    <td>{{x.phone}}</td>
+    <td>{{x.date * 1000 | date}}</td>
+    <td>{{x.amount | currency:'USD':true:'1.2-2'}}</td>
+    <td>{{x.status}}</td>
+    <td>
+        <button (click)="delete_ch(x.id)" class="btn-danger">Delete</button>
+        <button *ngIf='!id' routerLink="up_check/{{x.id}}" class="btn-warning">Update</button>
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,47 @@
+
+#header {
+    width: 800px;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+}
+#nav {
+    width: 200px;
+    height: 900px;
+    background-color: antiquewhite;
+    float: left;
+}
+#main {
+    width: 500px;
+    height: 900px;
+    float: left;
+    background-color: beige;
+}
+#content {
+    width: 800px;
+    margin: auto;
+}
+#footer {
+    clear: both;
+    background-color: azure;
+    text-align: center;
+}
+#drop {
+    float: none;
+}
+#ch {
+    float: right;
+}
+#sidebar {
+    float: right;
+    width: 100px;
+    height: 900px;
+    float: right;
+    background-color: greenyellow;
+}
+#indent {
+    margin-left: 30px;
+}
+#login {
+    color: red;
+}

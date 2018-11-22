@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Office</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body id="body">
+
+<style>
+#body {
+  width: 100%;
+  padding-right: 0px;
+}
+.table-striped {
+width: 100%;
+}
+
+/* #left{
+  margin-left: 400px;
+}
+.btn-primary {
+  float: right;
+  color: black;
+  background-color: white;
+}
+
+.btn-danger {
+  float: right;
+  margin-right: 100px;
+  color: black;
+  background-color: white;
+}
+#right {
+  float: right;
+  margin-right: 50px;
+}
+#icon {
+  float: right;
+  margin-right: 110px;
+}
+.btn-default{
+  color: blue;
+} */
+.container {
+  margin-left: 0px;
+}
+</style>
+<div class="container">
+    <!-- <form>
+        <input type="number" name="online" [(ngModel)]="online" placeholder="$$">
+        <input type="submit" name="drop" value="Drop">
+      </form><br /> -->
+    <span class="btn-default">Overall Balance is: ${{overall}} </span>
+  <h2>Office</h2>
+  <form class="form-inline" (submit)="addEmployee()">
+    <div class="form-group">
+      <label for="first_name">Description:</label>
+      <input type="text" class="form-control" id="name" placeholder="Item Description" name="first" [(ngModel)]="model.firstname">
+    </div>
+    <!-- <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div> -->
+    <button type="submit" class="btn btn-success">Register</button>
+  </form> <hr />    
+  
+
+     
+        <!-- <select class="btn-warning" name="value" [(ngModel)]="value">
+          <option>All</option>
+          <option>Nagative Balance</option>
+        </select> -->
+        <span class="btn-primary">Total: ${{all | amFil:value}}</span>
+  <!-- <input type="number" name="phone" id="left" class="btn-default" [(ngModel)]="phone" placeholder="Find by phone#">      -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Balance</th>
+        <th id="icon">Delete</th>
+        <th>Update</th>
+        <th>Transaction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of amano | filter:phone | amfilter:value">
+        <td>{{x.firstname}}</td>
+        <td>{{x.r_balance | currency:'USD':true:'1.2-2'}}</td>
+        <td>
+          <button class="btn-danger" (click)="delete(x.id)">Delete</button>
+        </td>
+        <td>
+            <button routerLink="../update/{{x.id}}" class="btn-warning">Update</button>
+        </td>
+        <td>
+            <button routerLink="../amano/transaction/{{x.id}}" class="btn-info">Deposit/Withdraw</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
+
+

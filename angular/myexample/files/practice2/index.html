@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   	<title>First Routing Application</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="newcon.js"></script>
+    <script type="text/javascript" src="oldcon.js"></script>
+   
+
+   
+</head>
+<body ng-app="myapp" ng-controller="maincontrol">
+<h1> First Routing basic</h1>
+<nav>
+	<ul>
+		<li><button ng-click="go()">New Event</button></li>	
+	
+		
+
+	</ul>
+</nav>
+<ng-view></ng-view>
+</body>
+</html>

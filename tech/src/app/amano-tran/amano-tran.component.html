@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+  #form{
+    width: 400px;
+    float: left;
+    margin-right: 100px;
+  }
+  .table {
+    width: auto;
+    float: left;
+    margin-top: 40px;
+
+  }
+  #name {
+
+    color: darkblue;
+  }
+  .btn-default{
+  color: blue;
+}
+</style>
+<div class="container">
+  <div id="name" *ngFor="let y of all">
+    <h3>{{y.firstname}} {{y.lastname}}</h3>
+ 
+  <form id="form">
+    <div class="form-group">
+      <!-- <select name="id" [(ngModel)]="model.id" required>
+        <option>{{id}}</option>
+      </select> -->
+    </div>
+    <div class="form-group">
+      <label for="email">Description</label>
+      <input type="text" class="form-control" id="disc" placeholder="Enter Description" name="description" [(ngModel)]="model.des">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Amount:</label>
+      <input type="amount" class="form-control" id="amount" placeholder="Enter $$" name="amount" [(ngModel)]="model.amount">
+    </div>
+    <!-- <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div> -->
+    <div *ngIf="y.type == 'normal'">
+    <button type="submit" class="btn btn-success" (click)="add_amano()">Deposit</button>
+    <button type="submit" class="btn btn-danger" (click)="withdraw_amano()">Withdraw</button>
+  </div>
+  
+  <div *ngIf="y.type !== 'normal' && y.type !== 'office'">
+    <button type="submit" class="btn btn-success" (click)="add_dayn()">Paid</button>
+    <button type="submit" class="btn btn-danger" (click)="withdraw_dayn()">Debit</button>
+  </div>
+  <div *ngIf="y.type == 'office'">
+    <button type="submit" class="btn btn-success" (click)="add_office()">Credit</button>
+    <button type="submit" class="btn btn-danger" (click)="withdraw_office()">Expense</button>
+  </div>
+  </form>
+</div>
+  <!-- filter by:<input type="text" [(ngModel)]="magac"> -->
+<table class="table table-striped">
+     <thead>
+       <tr>
+         <th>Date</th>
+         <th>Description</th>
+         <th>Debit</th>
+         <th>Credit</th>
+         <th>Balance</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let x of amano">
+         <td>{{x.date * 1000 | date}}</td>
+         <td>{{x.description}}</td>
+         <td>{{x.debit | currency:'USD':true:'1.2-2'}}</td>
+         <td>{{x.deposit | currency:'USD':true:'1.2-2'}}</td>
+         <td>{{x.idbalance | currency:'USD':true:'1.2-2'}}</td>
+         <td>
+           <!-- <button class="btn-danger">Drop</button> -->
+         </td>
+       </tr>
+     </tbody>
+   </table>
+  </div>
+</body>
+</html>

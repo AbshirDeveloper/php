@@ -1,0 +1,580 @@
+@media screen and (max-width: 1020px) {
+  #main, #header, #page, #navigation, #footer, #sawir, #button{
+    float: none;
+    width: auto;
+    margin-bottom: 13px;
+    margin-top: auto;
+    height: auto;
+  }
+ #subtitle, #share, #slider, #sidebar, #sawi, #saw{
+    display:none;
+ }
+ #navigation{
+ 	margin-bottom: 170px;
+ }
+ #page{
+ 	margin-top: 50px;
+ }
+  p{ font-size: 2em; }
+}
+
+#body {
+	background-color: grey;
+}
+
+#main {
+	
+	width: auto;
+	height: 400px;
+	background-color: #7FDBFF;
+	background-image: url(full.jpg);
+	margin: auto;
+}
+#header {
+	
+	float: top;
+	width: auto;
+	height: auto;
+	background-size: 1150px 200px;
+}
+#page {
+	
+	width: auto;
+	height: 600px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+#navigation {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	float: left;;
+	align-content: center;
+}
+
+#footer {
+	
+	width: 100%;
+	height: 100px;
+	clear: all;
+}
+#button {
+	position: relative;
+	width: 200px;
+	background-color: gold;
+	margin-bottom: auto;
+}
+#button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+#button:hover {
+	text-decoration: none;
+}
+#button:active {
+	position: relative;
+	top: 1px;
+}
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 55px 50px;
+	margin-top: 40px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+	padding-bottom: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+#face {
+	width: 35px;
+	height: 35px;
+}
+#register {
+	background-color: white;
+	width: 385px;
+	height: 300;
+	margin-left: 200px;
+	margin-top: 50px;
+}
+#field {
+	float: right;
+}
+#star {
+	color: red;
+}
+#informing {
+	margin-left: 100px;
+}
+url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 360px;
+  position: relative;
+  margin-bottom: 60px;
+
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin-top: 130px;
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+#login_header{
+	float: right;
+	margin-right: 20px;
+	margin-top: 50px;
+}
+#pages {
+	background-color: lightgreen;
+	width: 100%;
+	height: 100%;
+	margin-top: 0px;
+}
+.dropbtn {
+    background-color: lightyellow;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgreen;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: green;
+}
+#login_name {
+	color: blue;
+}
+
+#green {
+	background-color: lightgreen;
+}
+#customer {
+	width: 300px;
+	float: right;
+	background-color: lightpurple;
+	text-align: right;
+}
+#red {
+	color: red;
+}
+#sawir {
+	position: relative;
+	height: 130px;
+	width: 320.3px;
+}
+#sawi {
+	position: relative;
+	height: 130px;
+	width: 320.3px;
+}
+#saw {
+	position: relative;
+	height: 130px;
+	width: 320.3px;
+}
+#magac {
+	color: red;
+}
+#referal {
+	background-color: lightgreen;
+}
+#order {
+	color: green;
+	width: 200px;
+	height: 100px;
+}
+
+
+a.button {
+	font-family: 'PT Sans', arial, serif;
+	color: gold;
+	text-align:center;
+	font-size:24px;
+	font-weight:bold;
+	padding:10px;
+	
+	text-shadow: /* Simulating Text Stroke */
+        -1px -1px 0 #000, 
+        1px -1px 0 #000, 
+        -1px 1px 0 #000, 
+        1px 1px 0 #000;
+	
+	border: 1px solid rgba(0,0,0,0.5);
+	border-bottom: 3px solid rgba(0,0,0,0.5);
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	background: 
+
+    -o-box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 10px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+    -webkit-box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 10px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+    -moz-box-shadow:
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 10px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+	
+	box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5), /* Exterior Shadow */
+        inset 0 1px rgba(255,255,255,0.3), /* Top light Line */
+        inset 0 10px rgba(255,255,255,0.2), /* Top Light Shadow */
+        inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+        inset 0 -15px 30px rgba(0,0,0,0.3); /* Dark Background */
+
+	margin: 40px;
+	display: inline-block;
+	text-decoration: none;
+}
+#order {
+	width: 1000px;
+	height: 400px;
+	margin-left: 130px;
+	margin-top: 30px;
+	background-color: 
+}
+
+#ordering {
+	float: left;
+	width: 450px;
+	height: 400px;
+}
+
+#tracking {
+	float: right;
+	width: 450px;
+	height: 400px;
+}
+#midier {
+	width: 5px;
+	height: 400px;
+	background-color: black;
+	float: left;
+	margin-left: 50px;
+}
+#order_name {
+	width: 200px;
+	height: 20px;
+	margin-left: 10px;
+	border-style: solid;
+}
+#order_button {
+	width: 200px;
+	height: 20px;
+	margin-left: 10px;
+	background-color: gold;
+}
+#top {
+	background-color: gold;
+	width: 100%;
+	height: 20px;
+}
+#top_info {
+	float: right;
+	margin-right: 10px;
+}
+#about {
+	background-color: yellow;
+	width: 100%;
+	height: 200px;
+	float: right;
+}
+#titl {
+	background-color: green;
+	width: 100%
+	height: 100px;
+	padding-bottom: 50px;
+	margin-top: 50px;
+}
+

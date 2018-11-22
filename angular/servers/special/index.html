@@ -1,0 +1,55 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>  
+<script src="app.js"></script> 
+<script src="maincontrollers.js"></script> 
+</head>
+<body>
+<div ng-app="myapp" ng-controller="parentscope">
+    {{color}}
+<div ng-controller="second">
+    {{color}}
+     <ul>
+    <li ng-repeat="x in arr">
+        {{x}}
+    </li>
+         <br />
+     <li ng-repeat="y in letters">
+        {{y  | uppercase}}
+    </li>
+    <br />
+    </ul>
+    <input type="text" ng-model="sort">
+    <ul>
+    <li ng-repeat="z in names | filter:sort" >
+        {{z.name+" "+z.country}}
+    </li>
+    </ul>
+</div>    
+    {{color}}
+</div>
+<!--
+<div ng-controller="firstcon">
+<input type="number" ng-model="x"/>
+    <button ng-click = "show(x)">add</button> <br />
+{{firstname}} <br/>
+{{arr}};
+</div><br />
+-->
+<!--
+<div ng-controller="secondcon">
+ <button ng-click = "change()">Click</button>
+<p ng-show = "check">Hello</p><br />
+{{middle}}
+</div>
+-->
+<!--
+<div ng-controller="lastcon">
+<a href="{{link}}">{{name}}</a>
+<button ng-click="change()">Change Engine</button>
+{{lastname}}
+</div>
+-->
+</body>
+
+</html>

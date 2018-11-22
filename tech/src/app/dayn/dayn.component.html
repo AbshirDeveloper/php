@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dayn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body id="body">
+
+<style>
+
+.container {
+  width: 100%;
+}
+#body {
+  width: 100%;
+  padding-right: 0px;
+}
+.table-striped {
+width: 100%
+}
+#left {
+  margin-left: 400px;
+}
+.btn-primary {
+  background-color: white;
+  color: blue;
+}
+.btn-info {
+  float: right;
+}
+#high{
+  background-color: lightyellow;
+  float: left;
+}
+.btn-default{
+  color: blue;
+}
+
+#highs {
+  background-color: lightgreen;
+}
+</style>
+<div class="container">
+    <!-- <form>
+        <input type="number" name="online" [(ngModel)]="online" placeholder="$$">
+        <input type="submit" name="drop" value="Drop">
+      </form><br /> -->
+    <span class="btn-default">Overall Balance is: {{overall | currency:'USD':true:'1.2-2'}} </span>
+  <h2>Dayn</h2>
+  <form class="form-inline" (submit)="addDayn(); reset();">
+    <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" class="form-control" id="amount" placeholder="Enter Name" name="name" [(ngModel)]="model.name">
+    </div>
+    <div class="form-group">
+        <label for="number">Phone#:</label>
+        <input type="number" class="form-control" id="amount" placeholder="Enter Phone#" name="phone" [(ngModel)]="model.phone_number">
+      </div>
+      <div class="form-group">
+          <label for="amount">$$</label>
+          <input type="number" class="form-control" id="amount" placeholder="Enter $$" name="amount" [(ngModel)]="model.amount">
+        </div>
+        <div class="form-group">
+          <label for="amount">Days to pay</label>
+          <input type="number" class="form-control" id="amount" placeholder="Days to pay" name="amount" [(ngModel)]="model.days">
+        </div>
+    <!-- <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div> -->
+    <button type="submit" class="btn-success">Register</button>
+  </form> <hr />
+
+  <form>
+      <select class="btn-warning" name="value" [(ngModel)]="value">
+          <option selected>All</option>
+          <option>late</option>
+        </select>
+      <!-- <span class="btn-primary">Past Due: {{neg}}  </span><span> </span> <br/>    -->
+      <span class="btn-primary">Total: {{all | filter_dayn:value | currency:'USD':true:'1.2-2'}}</span>  
+    </form> 
+      <input type="number" name="phone" class="btn-default" [(ngModel)]="phone" placeholder="Find by phone#">
+  <table class="table table-striped">
+   
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Due Date</th>
+        <th>Full Name</th>
+        <th>Phone#</th>
+        <!-- <th>Amount</th>
+        <th>Paid</th> -->
+        <th>Balance</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of dayn | filter:phone | filters:value">
+        <td>{{x.date * 1000 | date}}</td>
+        <td>{{x.due_date * 1000 | date}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.phone}}</td>
+        <!-- <td>${{x.amount}}</td>
+        <td>${{x.paid}}</td> -->
+        <td *ngIf="0 > x.balance" id="highs">{{x.balance * -1 | currency:'USD':true:'1.2-2'}}</td>
+        <td *ngIf="x.balance > 0">{{x.balance * -1 | currency:'USD':true:'1.2-2'}}</td>
+        <td id="high">
+          <button *ngIf="!x.type" (click)="delete(x.id)" class="btn-danger">Delete</button>
+          <button *ngIf="x.type" (click)="delete_all(x.type)" class="btn-danger">Delete</button>
+          <!-- <button class="btn-warning">Update</button> -->
+          <button *ngIf="x.type" routerLink="../amano/transaction/{{x.type}}" class="btn-info">Payment/Update</button>
+          <button *ngIf="!x.type" routerLink="payment/{{x.id}}" class="btn-primary">Payment/Update</button>
+          <button *ngIf="x.type" routerLink="payment/{{x.id}}" class="btn-primary">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
+
+

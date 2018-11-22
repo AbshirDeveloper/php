@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Texting</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+  #right{
+    float: right;
+    width: 400px;
+    height: 100%;
+    margin-right: 200px;
+  }
+  .table-bordered{
+    float: left;
+    width: 400px;
+    margin-right: 100px;
+  }
+  .btn-success {
+    width: auto;
+  }
+  #date {
+    margin-left: 300px;
+  }
+  #text {
+    margin-left: 180px;
+  }
+  .container {
+    margin-left: 0px;
+  }
+  
+</style>
+<div class="container">
+    <form class="form-inline" (submit)="register_com(); reset();">
+      <div class="form-group">
+        <label for="email">Name:</label>
+        <input type="text" class="form-control" id="email" [(ngModel)]="com.name" placeholder="Enter Name" name="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Phone#:</label>
+        <input type="text" class="form-control" id="pwd" [(ngModel)]="com.phone" placeholder="Enter Ph#" name="pwd">
+      </div>
+      <button type="submit" class="btn btn-default">Register</button>
+    </form>
+  <h2>Communicate with your customers</h2>
+  <form (submit)="addnote()">
+    <select name="name" [(ngModel)]="model.name" required>
+      <option>Directory</option>
+      <option>Dayn</option>
+      <option>Amaano</option>
+    </select>
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea name="message" [(ngModel)]="model.message" class="form-control" rows="5" id="comment" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Send</button>
+  </form>
+
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone#</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of directory">
+          <td>{{x.name}}</td>
+          <td>{{x.phone}}</td>
+          <td><button (click)="delete_director(x.id)" class="btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="right" *ngFor="let x of notes">
+      <div class="w3-round w3-teal">
+      <span id="text">{{x.name}}</span><br /><hr />
+      <p>{{x.message}}</p><br /><hr/>
+      <span><h6 id="date">{{x.time * 1000 | date}}</h6></span>
+      <button (click)="delete_message(x.id)" class="btn-danger">Delete</button>
+    </div>
+    <br />
+    </div>
+</div>
+
+</body>
+</html>
