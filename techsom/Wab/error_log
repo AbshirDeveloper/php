@@ -1,0 +1,4 @@
+[06-Jan-2017 23:37:26 UTC] PHP Warning:  require_once(../data/functions.php): failed to open stream: No such file or directory in /home/ajama26/public_html/Web/test.php on line 1
+[06-Jan-2017 23:37:26 UTC] PHP Fatal error:  require_once(): Failed opening required '../data/functions.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/ajama26/public_html/Web/test.php on line 1
+[06-Jan-2017 23:38:30 UTC] PHP Warning:  require_once(functions.php): failed to open stream: No such file or directory in /home/ajama26/public_html/data/combine.php on line 1
+[06-Jan-2017 23:38:30 UTC] PHP Fatal error:  require_once(): Failed opening required 'functions.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/ajama26/public_html/data/combine.php on line 1
